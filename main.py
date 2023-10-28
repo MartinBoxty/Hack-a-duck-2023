@@ -1,6 +1,11 @@
-def main():
-    # Your main code goes here
-    print("Hello, World!")
+import json
+import requests
+import scratch
 
-if __name__ == "__main__":
+
+def main():
+    print(scratch.json_response)
+
+
+if __name__ == '__main__':
     main()
