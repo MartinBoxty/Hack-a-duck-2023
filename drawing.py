@@ -30,6 +30,18 @@ fig, ax = plt.subplots()
 ax.plot(dates, money, marker='o', linestyle='-', color='b')
 ax.grid(True)
 
+data1 = [
+    {"date": "2023-10-15", "money": 40},
+    {"date": "2023-10-20", "money": 120},
+    {"date": "2023-10-25", "money": 11},
+]
+
+dates = [entry["date"] for entry in data1]
+money = [entry["money"] for entry in data1]
+
+ax.plot(dates, money, marker='o', linestyle='-', color='r')
+ax.grid(True)
+
 canvas = FigureCanvasTkAgg(fig, master=root)
 canvas_widget = canvas.get_tk_widget()
 canvas_widget.pack()

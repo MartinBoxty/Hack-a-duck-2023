@@ -7,11 +7,11 @@ def spendingProj(transactions):
 
     Categories = {}  #  dic of categories by spendings and print from the highest to lowest
     amounts = [{}]
-
+    highest_amount = 0
     for transaction in transactions:
-
-        if transaction["category"] not in Categories:
-            Categories[transaction["category"]] = transaction["amount"]
+        print(transaction)
+        if transaction['merchant']["category"] not in Categories:
+            Categories[transaction['merchant']["category"]] = transaction["amount"]
         else:
             Categories[transaction["category"]] += transaction["amount"]
 
