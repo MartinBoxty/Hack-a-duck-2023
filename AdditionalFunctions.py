@@ -21,4 +21,5 @@ def compareDate(firstDate, secondDate):  # comparing if firstdate > seconddate
     elif firstDay > secondDay:
         result = True
 
+
     return result
