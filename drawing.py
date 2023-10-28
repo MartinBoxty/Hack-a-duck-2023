@@ -12,10 +12,13 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
 root = tk.Tk()
-root['bg'] = '#f4ffff'
+root['bg'] = '#ffffff'
 root.title('app')
 root.geometry('1024x600')
 root.resizable(width=True, height=True)
+
+label = tk.Label(root, text="Hello world", font=("Arial", 18), bg="#ffffff")
+label.pack()
 
 data = [
     {"date": "2023-10-15", "money": 20},
