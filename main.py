@@ -1,11 +1,13 @@
 import json
 import requests
 import scratch
+from getAmounts import getData
 
 
 from spending_projection import spendingProj
 
 def main():
+
     transactions = [
         {
             "transactionUUID": "0673bca4-fbb2-46bd-aa76-36243305ceed",
@@ -48,6 +50,8 @@ def main():
             "pointOfSale": "In-store"
         }
     ]
+    allTransactions = getData(transactions)
+
 
     spendingProj(transactions)
 

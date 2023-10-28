@@ -1,1 +1,1 @@
-#def balanceProj(transactions):
+def balanceProj(transactions):
