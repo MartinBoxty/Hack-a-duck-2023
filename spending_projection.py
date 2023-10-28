@@ -1,31 +1,19 @@
-def spendingProj(transactions):
+def spendingProj(transactions, allTransactions):
     #mean = 0     not finished this yet
     #print("projected spendings = "+str(mean))
     # we need to look at the dates of the transactions. after that we look at all of the transactions
     # at that month and the other month (if there is one) and "return mean_average".
     # if there is not enough data to calculate a mean for the user, we return 0.
 
-    Categories = {}  #  dic of categories by spendings and print from the highest to lowest
-    amounts = [{}]
+    categories = [{}]  #  dic of categories by spendings and print from the highest to lowest
 
     for transaction in transactions:
-
-        if transaction["category"] not in Categories:
-            Categories[transaction["category"]] = transaction["amount"]
-        else:
-            Categories[transaction["category"]] += transaction["amount"]
-
-
-        amounts.append({"date": transaction["timestamp"], "money":transaction["amount"]})
-
-
-        if transaction["amount"] > highest_amount:
-            highest_amount = transaction["amount"]
-            highest_amount_transaction = transaction
+        categories.append({"category": transaction["merchant"]["category"], "money": transaction["amount"], "date": transaction["timestamp"]})
 
 
 
-    for key, value in Categories.items():
+
+    for key, value in categories.items():
         print(f"{key}: {value}")
 
     difference = 0;         # how much you have spent so far compared to the prev month
