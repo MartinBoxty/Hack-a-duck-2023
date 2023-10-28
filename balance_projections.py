@@ -1,1 +1,1 @@
-#dddd
+#def balanceProj(transactions):

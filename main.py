@@ -3,9 +3,56 @@ import requests
 import scratch
 
 
-def main():
-    print(scratch.json_response)
+from spending_projection import spendingProj
 
+def main():
+    transactions = [
+        {
+            "transactionUUID": "0673bca4-fbb2-46bd-aa76-36243305ceed",
+            "accountUUID": "72965642",
+            "merchant": {
+                "name": "Capital Two",
+                "category": "Bills & Utilities",
+                "description": "Credit Card Company",
+                "pointOfSale": ["Online"]
+            },
+            "amount": 843.92,
+            "creditDebitIndicator": "Debit",
+            "currency": "GBP",
+            "timestamp": "2019-05-20 10:51:33",
+            "emoji": "🤑",
+            "latitude": -4.38849,
+            "longitude": 52.33594,
+            "status": "Successful",
+            "message": "Weekly groceries shopping",
+            "pointOfSale": "Online"
+        },
+        {
+            "transactionUUID": "093c805f-31c1-4721-8642-b7e9a09964f0",
+            "accountUUID": "72965642",
+            "merchant": {
+                "name": "Blahbucks",
+                "category": "Food & Dining",
+                "description": "Supplying all your coffee needs",
+                "pointOfSale": ["In-store"]
+            },
+            "amount": 517.06,
+            "creditDebitIndicator": "Credit",
+            "currency": "GBP",
+            "timestamp": "2019-07-09 11:47:47",
+            "emoji": "🥰",
+            "latitude": -1.86852,
+            "longitude": 53.39733,
+            "status": "Successful",
+            "message": "Holiday souvenirs",
+            "pointOfSale": "In-store"
+        }
+    ]
+
+    spendingProj(transactions)
+
+
+    print(transactions[0]["merchant"]["category"])
 
 if __name__ == '__main__':
     main()
