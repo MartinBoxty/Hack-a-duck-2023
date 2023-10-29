@@ -1,3 +1,5 @@
+
+
 def spendingProj(transactions, allTransactions):
     #mean = 0     not finished this yet
     #print("projected spendings = "+str(mean))
@@ -13,11 +15,14 @@ def spendingProj(transactions, allTransactions):
 
 
 
+
+
+
     for key, value in categories.items():
         print(f"{key}: {value}")
 
     difference = 0;         # how much you have spent so far compared to the prev month
-    print ("difference = "+str(difference))
+    print("difference = "+str(difference))
 
     # print the graph (in text format for now)
     transactionsThisYear = {"29.10.23":0} # dic of spendings this year with date. for a future bar chart

@@ -2,6 +2,7 @@ import json
 import requests
 import scratch
 from getAmounts import getData
+from drawingSpending import drawSpending
 
 
 from spending_projection import spendingProj
@@ -21,7 +22,7 @@ def main():
             "amount": 843.92,
             "creditDebitIndicator": "Debit",
             "currency": "GBP",
-            "timestamp": "2019-05-20 10:51:33",
+            "timestamp": "2019-10-25 08:19:03",
             "emoji": "🤑",
             "latitude": -4.38849,
             "longitude": 52.33594,
@@ -53,10 +54,11 @@ def main():
     allTransactions = getData(transactions)
 
 
-    spendingProj(transactions)
 
+    #spendingProj(transactions, allTransactions)
+    drawSpending("2019-02-12 12:45:34", allTransactions)
 
-    print(transactions[0]["merchant"]["category"])
+    #print(transactions[0]["merchant"]["category"])
 
 if __name__ == '__main__':
     main()
